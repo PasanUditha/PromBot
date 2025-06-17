@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head><title>Monitoring Report</title></head>
+<body>
+  <h2>Monitoring Report for {{ environment }}</h2>
+  <p>Time Range: {{ start }} to {{ end }}</p>
+
+  {% for metric in results %}
+    <h3>{{ metric.name }}</h3>
+    <pre>{{ metric.data | tojson(indent=2) }}</pre>
+  {% endfor %}
+</body>
+</html>

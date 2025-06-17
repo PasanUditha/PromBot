@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head><title>Generate Monitoring Report</title></head>
+<body>
+  <h2>Prometheus Report Generator</h2>
+  <form method="post">
+    <label>Environment:</label>
+    <input type="text" name="environment" required><br><br>
+
+    <label>Start Time (ISO):</label>
+    <input type="datetime-local" name="start_time" required><br><br>
+
+    <label>End Time (ISO):</label>
+    <input type="datetime-local" name="end_time" required><br><br>
+
+    <label>Select Metrics:</label><br>
+    <input type="checkbox" name="metrics" value="node_cpu_seconds_total"> CPU Usage<br>
+    <input type="checkbox" name="metrics" value="node_memory_Active_bytes"> Memory Active<br>
+    <input type="checkbox" name="metrics" value="node_disk_read_bytes_total"> Disk Reads<br><br>
+
+    <button type="submit">Generate Report</button>
+  </form>
+</body>
+</html>
